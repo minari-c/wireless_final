@@ -3,7 +3,7 @@ import Adafruit_DHT
 import time
 
 
-# GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 
 sensor = Adafruit_DHT.DHT11
 pin = 4
@@ -13,6 +13,6 @@ while True :
 		print(f"Temperature = {t:0.1f}*C Humidity = {h:0.1f}%")
 	else:
 		print('Read error')
-	time.sleep(0.25)
+	time.sleep(1)
 
 GPIO.cleanup()

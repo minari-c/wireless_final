@@ -1,14 +1,11 @@
 import RPi.GPIO as GPIO
 import time as t
 
-import RYG_indicator
+from RYGIndicator import RYGIndicator
 
 GPIO.setmode(GPIO.BCM)
-t.sleep(1)
 
-indicator = RYG_indicator(16, 20, 21)
-
-
+indicator = RYGIndicator(16, 20, 21)
 
 GPIO.cleanup()
 

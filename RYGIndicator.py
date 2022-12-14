@@ -11,13 +11,14 @@ class RYGIndicator(Sensor):
 		super().__init__([r_pin, y_pin, g_pin], self.__class__.__name__, 'notify current status')
 		GPIO.setup(self.use_pins, GPIO.OUT)
 		self.sensor_info()
-		self.blink(1)
-
+		self.blink(2, 0.5)
 
 	def sensor_info(self):
 		super().sensor_info()
 
-	def blink(self, term=1):
-		for led in self.use_pins:
-			Led.blink(led, term)
+	def blink(self, cycle=1, term=1):
+		for i in range(cycle):
+			print(f'[{i}]')
+			for led in self.use_pins:
+				Led.blink(led, term)
 
